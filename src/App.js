@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -24,6 +24,12 @@ const Auth = React.lazy(() => {
 });
 
 const App = (props) => {
+  const { onTryAutoSignup } = props;
+
+  useEffect(() => {
+    onTryAutoSignup();
+  }, [onTryAutoSignup]);
+
   let routes = (
     <Switch>
       <Route path="/auth" render={props => <Auth {...props} />} />
