@@ -15,10 +15,10 @@ const logout = React.memo(props => {
         return <Redirect to="/" />;
 });
 
-const mapDispatchToPropst = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
         onLogout: () => dispatch(actions.logout())
     };
 }
 
-export default connect(null, mapDispatchToPropst) (logout);
+export default connect(null, mapDispatchToProps) (logout);
