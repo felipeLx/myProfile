@@ -6,9 +6,11 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 const Navbar = ( props ) => (
     <header className={classes.Navbar}>
+        <Picture />
         <div className={classes.Logo}>
-            <Picture />
+        
         <nav className={classes.DesktopOnly}>
+            
             <NavigationItems />
         </nav>
         </div>

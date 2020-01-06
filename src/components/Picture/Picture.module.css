@@ -1,11 +1,10 @@
 .Picture {
-    background-color: white;
-    padding: 8px;
-    height: 30%;
+    background-color: rgb(9, 109, 112);
+    height: 100%;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
 .Picture img {
-    height: 30%;
+    height: 100%;
 }
