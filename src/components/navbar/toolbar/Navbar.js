@@ -5,13 +5,13 @@ import Picture from '../../Picture/Picture';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
 const Navbar = ( props ) => (
-    <header className={classes.Toolbar}>
+    <header className={classes.Navbar}>
         <div className={classes.Logo}>
             <Picture />
-        </div>
         <nav className={classes.DesktopOnly}>
             <NavigationItems />
         </nav>
+        </div>
     </header>
 );
 

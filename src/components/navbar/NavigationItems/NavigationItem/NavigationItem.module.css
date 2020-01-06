@@ -29,7 +29,7 @@
     }
     
     .NavigationItem a {
-        color: white;
+        color: black;
         height: 100%;
         padding: 16px 10px;
         border-bottom: 4px solid transparent;
@@ -40,6 +40,6 @@
     .NavigationItem a.active {
         background-color: rgb(44, 107, 143);
         border-bottom: 4px solid #40A4C8;
-        color: white;
+        color: black;
     }
 }
