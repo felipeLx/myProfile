@@ -1,6 +1,6 @@
 import React from 'react';
 
-import profilePic from '../../assets/images/profile.jpg';
+import profilePic from '../../assets/images/profile.png';
 import classes from './Picture.module.css';
 
 const Picture = (props) => (

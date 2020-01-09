@@ -1,40 +1,38 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-import ReactBnbGallery from 'react-bnb-gallery'
+// import ReactBnbGallery from 'react-bnb-gallery';
+// import ImageGallery from 'react-image-gallery'
 
 const photos = [{
-  photo: "https://photos.app.goo.gl/VuiXsVV4UPHdmJ7u7",
-  thumbnail:"https://photos.app.goo.gl/VuiXsVV4UPHdmJ7u7"
+  original: "../../../assets/images/1.JPG",
+  thumbnail:  "../../../assets/images/1.JPG"
 }, {
-  photo: "https://photos.app.goo.gl/dTxGMLBG51MMUR1C6",
-  thumbnail: "https://photos.app.goo.gl/dTxGMLBG51MMUR1C6"
+  original: "../../../assets/images/2.JPG",
+  thumbnail:  "../../../assets/images/2.JPG"
 }, {
-  photo: "https://photos.app.goo.gl/wyEf55BzJnedEydj9",
-  thumbnail: "https://photos.app.goo.gl/wyEf55BzJnedEydj9"
+  original: "../../../assets/images/3.JPG",
+  thumbnail:  "../../../assets/images/3.JPG"
 },{
-  photo: "https://photos.app.goo.gl/jh64pE1yqDND5L3H6",
-  thumbnail: "https://photos.app.goo.gl/jh64pE1yqDND5L3H6"
+  original: "../../../assets/images/4.JPG",
+  thumbnail:  "../../../assets/images/4.JPG"
 },{
-  photo: "https://photos.app.goo.gl/TGQU4r7c2hJtxRQ78",
-  thumbnail: "https://photos.app.goo.gl/TGQU4r7c2hJtxRQ78"
+  original: "../../../assets/images/5.JPG",
+  thumbnail:  "../../../assets/images/5.JPG"
 }];
 
-class Photos extends Component {
-  constructor() {
-    super(...arguments);
-    this.state = { galleryOpened: true };
+const Photos = () => {
+
+  const photoHandler = () => {
+    photos.map(e => e.push());
   }
 
-  render () {
-    return (
+  return (
       <div>
-        <ReactBnbGallery
-          show={this.state.galleryOpened}
-          photos={photos}
+        <img src={photoHandler}
+        alt=""
            />
-      </div>
+      </div>     
     );
-  }
-}
+  };
 
 export default Photos;
