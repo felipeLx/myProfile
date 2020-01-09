@@ -8,16 +8,67 @@
 }
 
 .Picture {
-    width: 60px;
-    height: 100px;
+    width: 200px;
+    height: 250px;
     text-align: center;
     margin: 10px auto;
+    border-radius: 40px;
 }
 
 .BannerText {
     background-color: black;
     opacity: 0.8;
-    width: 75%;
+    width: 60%;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+
+.BannerText h1 {
+    font-size: 66px;
+    font-weight: bold;
+    color: white;
+    padding-left: 30px;
+}
+
+.BannerText hr {
+    border-top: 5px dotted white;
+    width: 50%;
     margin: auto;
-    border-radius: 40px;
+}
+
+.BannerText p {
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.Profile {
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+    box-shadow: black;
+    width: 60%;
+    text-align: justify;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid gray;
+    background-color:  #0052D4;
+    opacity: 0.8;
+    color: white;
+}
+
+.Button {
+        background-color: #0052D4;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font: inherit;
+        padding: 10px;
+        margin: 10px;
+        font-weight: bold;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
 }

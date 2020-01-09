@@ -4,7 +4,6 @@ import Desktop from '../../components/Profile/Desktop/Desktop';
 
 const Profile = props => (
         <div>
-            <h1>Profile</h1>
             <Desktop />
         </div>
     );
