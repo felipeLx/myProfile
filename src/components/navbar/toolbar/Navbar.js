@@ -7,13 +7,13 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 const Navbar = ( props ) => (
     <header className={classes.Navbar}>
-        <DrawerToggle clicked={props.drawerToggleClicked} />
+         <DrawerToggle clicked={props.drawerToggleClicked} />
         <div className={classes.Logo}>
-        <Picture />
-        <nav className={classes.DesktopOnly}>
+         <Picture />
+        </div>
+        <nav className={classes.DesktopOnly}>   
             <NavigationItems />
         </nav>
-        </div>
     </header>
 );
 

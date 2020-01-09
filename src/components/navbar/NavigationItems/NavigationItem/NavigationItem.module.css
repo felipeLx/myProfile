@@ -38,7 +38,7 @@
     .NavigationItem a:hover,
     .NavigationItem a:active,
     .NavigationItem a.active {
-        background-color: rgb(3, 36, 54);
+        background-color: rgb(4, 141, 214);
         border-bottom: 4px solid #40A4C8;
         color: white;
     }
