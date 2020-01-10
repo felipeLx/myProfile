@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Picture from '../../Picture/Picture';
+import Picture from '../Picture/Picture';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';

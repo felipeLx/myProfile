@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import Aux from '../Aux/Aux';
 import classes from './Layout.module.css';
-import Navbar from '../../components/navbar/toolbar/Navbar';
-import SideDrawer from '../../components/navbar/SideDrawer/SideDrawer';
+import Navbar from '../../components/Tolbar/toolbar/Navbar';
+import SideDrawer from '../../components/Tolbar/SideDrawer/SideDrawer';
 
 const layout = React.memo(props => {
     const [showSideDrawer, setShowSideDrawer] = useState(false);

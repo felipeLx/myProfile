@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './Navbar.module.css';
-import Picture from '../../Picture/Picture';
+import Picture from '../Picture/Picture';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import NavigationItems from '../NavigationItems/NavigationItems';
 

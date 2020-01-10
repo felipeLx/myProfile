@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Map from '../../components/MyExperience/Map/Map';
+
 const Experience = (props) => {
     return(
         <div>
-            <h1>Experience</h1>
+            <Map />
         </div>
     );
 };
