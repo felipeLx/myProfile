@@ -1,0 +1,31 @@
+.Button {
+    background-color: #0052D4;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+
+.Profile {
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+    box-shadow: black;
+    width: 60%;
+    text-align: justify;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid gray;
+    background-color:  #0052D4;
+    opacity: 0.8;
+    color: white;
+}
