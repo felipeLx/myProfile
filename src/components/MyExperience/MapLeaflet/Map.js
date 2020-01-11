@@ -7,6 +7,18 @@ const Map = () => {
         console.log("RJ clicked");
     }
     
+    const openFloripa = () => {
+        console.log("SC clicked");
+    }
+
+    const openLisbon = () => {
+        console.log("Lx clicked");
+    }
+
+    const openSpain = () => {
+        console.log("Sp clicked");
+    }
+
     return (
         <div className={classes.Map}>
             <img 
@@ -14,10 +26,10 @@ const Map = () => {
                 alt="world experience"
                 useMap="#map" />
             <map name="map">
-                <area alt="rio" shape="rect" coords="460,789,493,816" onClick={openRioExperience} onMouseLeave={console.log('outRio')} />
-                <area alt="floripa" shape="rect" coords="403,878,430,901" onMouseOver="{openFloripa}" onMouseLeave="{closeFloripa}" />
-                <area alt="spain" shape="rect" coords="798,113,830,140" onMouseOver="{openSpain}" onMouseLeave="{closeSpain}" />
-                <area alt="lisbon" shape="rect" coords="723,134,757,160" onMouseOver="{openLisbon}" onMouseLeave="{closeLisbon}" />
+                <area alt="rio" shape="rect" coords="460,789,493,816" onClick={openRioExperience} />
+                <area alt="floripa" shape="rect" coords="403,878,430,901" onClick={openFloripa} />
+                <area alt="spain" shape="rect" coords="798,113,830,140" onClick={openSpain} />
+                <area alt="lisbon" shape="rect" coords="723,134,757,160" onClick={openLisbon} />
             </map>
         </div>
     );

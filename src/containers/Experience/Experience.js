@@ -1,11 +1,12 @@
 import React from 'react';
 
-import Map from '../../components/MyExperience/Map/Map';
+// import Map from '../../components/MyExperience/Map/Map';
+import MapLeaflet from '../../components/MyExperience/MapLeaflet/MapLeaflet';
 
 const Experience = (props) => {
     return(
         <div>
-            <Map />
+            <MapLeaflet />
         </div>
     );
 };
