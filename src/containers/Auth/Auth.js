@@ -43,13 +43,13 @@ const auth = React.memo(props => {
 
     const [isSignup, setIsSignup] = useState(true);
 
-    const { buildingBurger, authRedirectPath ,onSetAuthRedirectPath } = props;
+    const { authRedirectPath ,onSetAuthRedirectPath } = props;
 
     useEffect(() => {
-        if ( !buildingBurger && authRedirectPath !== '/' ) {
+        if ( authRedirectPath !== '/contact' ) {
             onSetAuthRedirectPath();
         }
-    }, [buildingBurger, authRedirectPath ,onSetAuthRedirectPath]);
+    }, [authRedirectPath ,onSetAuthRedirectPath]);
 
     const inputChangedHandler = ( event, controlName ) => {
         const updatedControls = updateObject( controls, {
@@ -128,7 +128,6 @@ const mapStateToProps = state => {
         loading: state.auth.loading,
         error: state.auth.error,
         isAuthenticated: state.auth.token !== null,
-        buildingBurger: state.burgerBuilder.building,
         authRedirectPath: state.auth.authRedirectPath
     };
 };
@@ -136,7 +135,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onAuth: ( email, password, isSignup ) => dispatch( actions.auth( email, password, isSignup ) ),
-        onSetAuthRedirectPath: () => dispatch( actions.setAuthRedirectPath( '/' ) )
+        onSetAuthRedirectPath: () => dispatch( actions.setAuthRedirectPath( '/contact' ) )
     };
 };
 

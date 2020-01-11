@@ -114,7 +114,7 @@ const Form = React.memo(props => {
             <Button btnType="Success" disabled={!formIsValid}>SEND</Button>
         </form>
     );
-    if ( props.loading ) {
+    if ( this.props.loading ) {
         form = <Spinner />;
     }
     return (
