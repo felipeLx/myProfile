@@ -11,7 +11,7 @@ import classes from './Form.module.css';
 import * as actions from '../../../store/actions/index';
 
 const Form = React.memo(props => {
-    const [sendEmail, setSendEmail] = useState = ({
+    const [sendEmail, setSendEmail] = useState({
         name: {
             elementType: 'input',
             elementConfig: {
@@ -58,22 +58,23 @@ const Form = React.memo(props => {
 
     const orderHandler = ( event ) => {
         event.preventDefault();
-  
+        console.log('sent');
         const formData = {};
         for (let formElementIdentifier in sendEmail) {
             formData[formElementIdentifier] = sendEmail[formElementIdentifier].value;
         }
         const order = {
             orderData: formData,
-            userId: props.userId
+            // userId: props.userId
         }
 
-        props.onSendEmail(order, props.token);
+        // props.onSendEmail(order, props.token);
+        props.onSendEmail(order);
         
     }
 
     const inputChangedHandler = (event, inputIdentifier) => {
-        
+        console.log('inputChangedHandler');
         const updatedFormElement = updateObject(sendEmail[inputIdentifier], {
             value: event.target.value,
             valid: checkValidity(event.target.value, sendEmail[inputIdentifier].validation),
@@ -114,7 +115,7 @@ const Form = React.memo(props => {
             <Button btnType="Success" disabled={!formIsValid}>SEND</Button>
         </form>
     );
-    if ( this.props.loading ) {
+    if ( props.loading ) {
         form = <Spinner />;
     }
     return (
@@ -128,14 +129,15 @@ const Form = React.memo(props => {
 const mapStateToProps = state => {
     return {
         loading: state.order.loading,
-        token: state.auth.token,
-        userId: state.auth.userId
+        // token: state.auth.token,
+        // userId: state.auth.userId
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSendEmail: (orderData,token) => dispatch(actions.sendEmail(orderData, token))
+        // onSendEmail: (orderData,token) => dispatch(actions.sendEmail(orderData, token))
+        onSendEmail: (orderData) => dispatch(actions.sendEmail(orderData))
     };
 };
 
