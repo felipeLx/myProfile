@@ -2,17 +2,32 @@
     text-align: center;
     margin: auto;
 }
+
     
-.Rio :hover {
-    border: 1px solid white;
+.Area :hover {
     cursor: pointer;
-    vertical-align: middle;
-    transform: scale(0);
-    transition-duration: 0.3s;
-    transition-property: color;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
     overflow: hidden;
-    position: absolute;
-    background: #2098D1;
+    background: #e1e1e1;
+    transition-property: color;
+    transition-duration: 0.3s;
     border-radius: 50%;
+}
+
+.Area :hover::before {
+    transform: scale(2);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2098D1;
+    border-radius: 100%;
+    transition-property: transform;
+    transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
