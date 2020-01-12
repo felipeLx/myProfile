@@ -15,7 +15,7 @@ const SpringMaster = () => {
     <Card.Body className={classes.Projects}>
       <Card.Title>Java</Card.Title>
       <Card.Text>
-        Java using Spring to build MVC learned in Bootcamp and course of Baeldung platform.
+        Java using Spring and mySQL to build MVC, learned in Bootcamp and course of Baeldung platform.
       </Card.Text>
       <Button variant="primary" onClick={openGithub}>Github</Button>
     </Card.Body>

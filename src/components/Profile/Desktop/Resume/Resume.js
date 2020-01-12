@@ -26,14 +26,18 @@ const Resume = () => {
             <button className={classes.Button} onClick={profileOpenHandler}>{defineSign()}</button>
             {openProfile && <Grid className={classes.Profile}>
                 <Cell col={4}>
-                    <p>When I saw the Code for the first time I thought that was some magic.
+                    <p>When I saw some code working for the first time I thought that was some magic.
                     After I learned Java in Academia de Código with the best teachers ever. 
-                    Learning Java and OOP opened my mind, I have to work hard to not be behind, in the end of the course we started with JavaScript. 
-                    In the course we have to work with Java, Hibernate, Spring, Ajax and mySQL. 
-                    When the course end I start to study other libraries. I started with Angular and TypeScript, 
-                    was cool, but later I start with React and MongoDB University, that was awesome, 
-                    I really identify something that I can be good on it. Study is now my hobby, 
-                    I'm continue to study more about Java, Spring, Spring Security and NodeJS to be prepare for the Backend, for the FrontEnd I'm going deep in JavaScript and React and for Database I'm studding MongoDB, Firebase and mySQL.</p>
+                    Learning Java and OOP opened my mind, I had to work hard to not be behind, just in the end of the course that we start with JavaScript. 
+                    In the course we worked with Java, Hibernate, Spring, Ajax, mySQL and much more. 
+                    When the course finished, so I start to study other libraries. I started with Angular and TypeScript, 
+                    was cool, but later I started with React and in the MongoDB University, that was awesome, 
+                    I really identify something that I can be good on it. 
+                    <br />
+                    Study is now my hobby!
+                    I'm continue to study more about Java, Spring, Spring Security and Node JS to be prepared for the Backend,
+                    for the FrontEnd I'm going deep in JavaScript and React and 
+                    for Database I'm still be studying using MongoDB, Firebase or mySQL.</p>
                 </Cell>
             </Grid>}
         </div>

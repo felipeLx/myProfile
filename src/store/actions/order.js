@@ -21,12 +21,10 @@ export const sendEmailStart = () => {
     };
 };
 
-// export const sendEmail = ( orderData, token ) => {
 export const sendEmail = ( orderData ) => {
     return {
         type: actionTypes.SEND_EMAIL,
         orderData: orderData,
-        // token: token
     }
 };
 
@@ -56,11 +54,8 @@ export const fetchEmailsStart = () => {
     };
 };
 
-// export const fetchEmails = (token, userId) => {
 export const fetchEmails = () => {
     return {
         type: actionTypes.FETCH_EMAILS,
-        // token: token,
-        // userId: userId
     }
 };

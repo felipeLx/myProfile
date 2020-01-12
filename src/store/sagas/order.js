@@ -7,7 +7,6 @@ export function* sendEmailSaga(action) {
     
     yield put( actions.sendEmailStart() );
     try{
-        // const response = yield axios.post( '/contact.json?auth=' + action.token, action.orderData )
         const response = yield axios.post( '/contact.json', action.orderData )
         console.log( response.data );
         yield put( actions.sendEmailSuccess( response.data.name, action.orderData ) );
@@ -18,7 +17,6 @@ export function* sendEmailSaga(action) {
 
 export function* fetchEmailsSaga(action) {
     yield put(actions.fetchEmailsStart());
-        // const queryParams = '?auth=' + action.token + '&orderBy="userId"&equalTo="' + action.userId + '"';
         try{
             const response = yield axios.get( '/contact.json' );
             const fetchedEmails = [];
