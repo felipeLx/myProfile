@@ -10,7 +10,7 @@ const Spain = () => {
         <Alert show={show} variant="secondary">
           <Alert.Heading>Inoxcrom</Alert.Heading>
           <p>
-            {`Controller - analysis and production control, projects for implementation of SAP (CO-FI), analysis of results and cost control and presentation of results for management.\n 
+            {`Controller - analysis and production control, part of the team in the implementation of SAP (CO-FI), cost control and presentation of results for management.\n\n 
             This experience was a conclusion of my Spain time, after six year working with people all around the Globe in different companies using SAP, I decided to back to Brazil`}
           </p>
           <hr />

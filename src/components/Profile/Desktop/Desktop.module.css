@@ -5,6 +5,7 @@
     padding: 10px;
     margin: 10px auto;
     box-sizing: border-box;
+    display: flex;  
 }
 
 .Picture {
@@ -21,6 +22,7 @@
     width: 60%;
     margin: 10px auto;
     border-radius: 20px;
+    display: grid;  
 }
 
 .BannerText h1 {
