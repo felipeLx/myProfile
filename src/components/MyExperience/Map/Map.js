@@ -7,8 +7,8 @@ import Floripa from './Floripa/Floripa';
 import Lisbon from './Lisbon/Lisbon';
 import Spain from './Spain/Spain';
 
-const Map = () => {
-
+const Map = props => {
+    const [showMap, setShowMap] = useState(true);
     const [showRioComponent, setShowRioComponent] = useState(false);
     const [showFloripaComponent, setShowFloripaComponent] = useState(false);
     const [showLisbonComponent, setShowLisbonComponent] = useState(false);
@@ -16,22 +16,46 @@ const Map = () => {
 
     const openRio = (e) => {
         e.preventDefault();
+        if(!showRioComponent) {
         setShowRioComponent(true);
+        setShowMap(false);
+        } else {
+            setShowRioComponent(false);
+            setShowMap(true);
+        }
     }
     
     const openFloripa = (e) => {
         e.preventDefault();
+        if(!showFloripaComponent) {
         setShowFloripaComponent(true);
+        setShowMap(false);
+        } else {
+            setShowFloripaComponent(false);
+            setShowMap(true);
+        }
     }
 
     const openLisbon = (e) => {
         e.preventDefault();
+        if(!showLisbonComponent) {
         setShowLisbonComponent(true);
+        setShowMap(false);
+        } else {
+            setShowLisbonComponent(false);
+            setShowMap(true);
+        }
     }
 
     const openSpain = (e) => {
         e.preventDefault();
+        if(!showSpainComponent) {
         setShowSpainComponent(true);
+        setShowMap(false);
+        } else {
+            setShowSpainComponent(false);
+            setShowMap(true);
+        }
     }
 
     return (
@@ -48,10 +72,11 @@ const Map = () => {
                     {showLisbonComponent && <Lisbon />}
                 </div>
             </map>
-            <img 
+            {showMap && <img 
                 src={map} 
                 alt="world experience"
                 useMap="#map" />    
+            }    
         </div>
     );
 };
