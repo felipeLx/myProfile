@@ -30,3 +30,11 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
+
+.Header {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: grid;  
+    padding-left: 10px;
+    color: rgb(103, 39, 223);
+}

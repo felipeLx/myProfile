@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import classes from '../Projects.module.css';
 
-const ReactBurger = () => {
+const SpringMaster = () => {
 
   const openGithub = () => {
     let link = 'https://github.com/felipeLx/baeldung.Spring';
@@ -23,4 +23,4 @@ const ReactBurger = () => {
     );
   };
 
-export default ReactBurger;
+export default SpringMaster;

@@ -7,14 +7,15 @@ const Spain = () => {
   
     return (
       <>
-        <Alert show={show} variant="success">
-          <Alert.Heading>SSC4</Alert.Heading>
+        <Alert show={show} variant="secondary">
+          <Alert.Heading>Inoxcrom</Alert.Heading>
           <p>
-            Full Stack Developer - responsible to start the project using mySql and Java, for this I use SpringBoot to build the MVC and MySQL Workbench to to the database.
+            {`Controller - analysis and production control, projects for implementation of SAP (CO-FI), analysis of results and cost control and presentation of results for management.\n 
+            This experience was a conclusion of my Spain time, after six year working with people all around the Globe in different companies using SAP, I decided to back to Brazil`}
           </p>
           <hr />
           <div className="d-flex justify-content-end">
-            <Button onClick={() => setShow(false)} variant="outline-success">
+            <Button onClick={() => setShow(false)} variant="outline-secondary">
               Close me!!
             </Button>
           </div>

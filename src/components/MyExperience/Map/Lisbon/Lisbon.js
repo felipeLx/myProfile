@@ -7,14 +7,14 @@ const Lisbon = () => {
   
     return (
       <>
-        <Alert show={show} variant="success">
-          <Alert.Heading>SSC4</Alert.Heading>
+        <Alert show={show} variant="info">
+          <Alert.Heading>Europcar Shared Service</Alert.Heading>
           <p>
-            Full Stack Developer - responsible to start the project using mySql and Java, for this I use SpringBoot to build the MVC and MySQL Workbench to to the database.
+          Account payable - there I understood that I can just have one way to be succeed, learning code. Working to UK and Spain holding I passed all the time talking with supplier and managers to solve problems, but few hours doing finance tasks. That was my point break in my finance career and the start of my present like a Full Stack Developer.
           </p>
           <hr />
           <div className="d-flex justify-content-end">
-            <Button onClick={() => setShow(false)} variant="outline-success">
+            <Button onClick={() => setShow(false)} variant="outline-info">
               Close me!!
             </Button>
           </div>
