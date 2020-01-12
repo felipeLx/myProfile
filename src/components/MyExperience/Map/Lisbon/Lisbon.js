@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import classes from '../Projects.module.css';
 
-const JavaScript = () => {
+const Lisbon = () => {
 
   const openGithub = () => {
     let link = 'https://github.com/felipeLx/javascriptPure';
@@ -23,4 +23,4 @@ const JavaScript = () => {
     );
   };
 
-export default JavaScript;
+export default Lisbon;
