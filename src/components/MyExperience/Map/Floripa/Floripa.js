@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
-function AlertDismissible() {
+const Floripa = () => {
     const [show, setShow] = useState(true);
   
     return (
@@ -27,4 +27,4 @@ function AlertDismissible() {
     );
   }
   
-  render(<AlertDismissible />);
+  export default Floripa;

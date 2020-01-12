@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Alert from 'react-bootstrap/Alert';
-import { Button } from 'react-bootstrap';
 
 const Rio = () => (
       <Alert variant="danger" dismissible>
@@ -11,7 +10,7 @@ const Rio = () => (
           Cras mattis consectetur purus sit amet fermentum.
         </p>
       </Alert>
-    );
+      );
  
 
 export default Rio;
