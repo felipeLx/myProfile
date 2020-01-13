@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { config } from '../../../axios-firebase';
+import { config, instance } from '../../../axios-firebase';
 import firebase from 'firebase/app';
 import axios from 'axios';
 
@@ -10,8 +9,6 @@ import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import Spinner from '../../UI/Spinner/Spinner'
 import classes from './Form.module.css';
-import * as actions from '../../../store/actions/index';
-
 
 const Form = props => {
     const [sendEmail, setSendEmail] = useState({
@@ -77,6 +74,7 @@ const Form = props => {
             emailData: formData,
             time: new Date().toDateString()
         }
+        console.log(email.JSON());
         if(!firebase){
             setFirebaseApp(firebase.initializeApp(config));
         }
@@ -98,15 +96,15 @@ const Form = props => {
             valid: checkValidity(event.target.value, sendEmail[inputIdentifier].validation),
             touched: true
         });
-        const updatedOrderForm = updateObject(sendEmail, {
+        const updatedEmailForm = updateObject(sendEmail, {
             [inputIdentifier]: updatedFormElement
         });
         
         let formIsValid = true;
-        for (let inputIdentifier in updatedOrderForm) {
-            formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
+        for (let inputIdentifier in updatedEmailForm) {
+            formIsValid = updatedEmailForm[inputIdentifier].valid && formIsValid;
         }
-        setSendEmail(updatedOrderForm);
+        setSendEmail(updatedEmailForm);
         setFormIsValid(formIsValid);
     }
    
@@ -144,17 +142,4 @@ const Form = props => {
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        loading: state.email.loading
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onSendEmail: (emailData) => dispatch(actions.sendEmail(emailData))
-    };
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps) (withErrorHandler(Form, axios));
+export default withErrorHandler(Form, instance);

@@ -1,6 +1,6 @@
 {
   "rules": {
-    "orders": {
+    "contact": {
       ".read": "false",
     	".write":"true"
       }
