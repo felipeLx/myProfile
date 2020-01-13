@@ -77,8 +77,19 @@ const Form = props => {
             emailData: formData,
             time: new Date().toDateString()
         }
-        props.onSendEmail(email);
-    }
+        if(!firebase){
+            setFirebaseApp(firebase.initializeApp(config));
+        }
+        axios.post('https://us-central1-imessanger-39b6d.cloudfunctions.net/submit', email)
+            .then(res => {
+                if(firebase){
+                    return firebase.database().ref('contact').push(email);
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
 
     const inputChangedHandler = (event, inputIdentifier) => {
         console.log('inputChangedHandler');
