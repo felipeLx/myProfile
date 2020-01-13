@@ -74,14 +74,15 @@ const Form = props => {
             emailData: formData,
             time: new Date().toDateString()
         }
-        console.log(email.JSON());
+        const db = firebase.database().ref();
+        console.log(email.toString());
         if(!firebase){
             setFirebaseApp(firebase.initializeApp(config));
         }
         axios.post('https://us-central1-imessanger-39b6d.cloudfunctions.net/submit', email)
             .then(res => {
                 if(firebase){
-                    return firebase.database().ref('contact').push(email);
+                    return db.database().ref('contact').push(email);
                 }
             })
             .catch(err => {

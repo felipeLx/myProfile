@@ -1,7 +1,7 @@
 {
   "rules": {
     "contact": {
-      ".read": "false",
+      ".read": "true",
     	".write":"true"
       }
   }
