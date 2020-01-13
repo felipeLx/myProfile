@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import axios from '../../../axios-firebase';
+import { config } from '../../../axios-firebase';
+import firebase from 'firebase/app';
+import axios from 'axios';
 
 import { updateObject, checkValidity } from '../../../shared/utility';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
@@ -10,7 +12,8 @@ import Spinner from '../../UI/Spinner/Spinner'
 import classes from './Form.module.css';
 import * as actions from '../../../store/actions/index';
 
-const Form = React.memo(props => {
+
+const Form = props => {
     const [sendEmail, setSendEmail] = useState({
         name: {
             elementType: 'input',
@@ -55,22 +58,26 @@ const Form = React.memo(props => {
     });
 
     const [formIsValid, setFormIsValid] = useState(false);
+    const [firebaseApp, setFirebaseApp] = useState();
 
-    const orderHandler = ( event ) => {
+    useEffect(() => {
+        if (!firebase) {
+            setFirebaseApp(firebase.initializeApp(config));
+          }
+    }, []);
+
+    const emailHandler = ( event ) => {
         event.preventDefault();
         console.log('sent');
         const formData = {};
         for (let formElementIdentifier in sendEmail) {
             formData[formElementIdentifier] = sendEmail[formElementIdentifier].value;
         }
-        const order = {
-            orderData: formData,
-            // userId: props.userId
+        const email = {
+            emailData: formData,
+            time: new Date().toDateString()
         }
-
-        // props.onSendEmail(order, props.token);
-        props.onSendEmail(order);
-        
+        props.onSendEmail(email);
     }
 
     const inputChangedHandler = (event, inputIdentifier) => {
@@ -100,7 +107,7 @@ const Form = React.memo(props => {
         });
     }   
     let form = (
-        <form onSubmit={orderHandler}>
+        <form onSubmit={emailHandler}>
             {formElementsArray.map(formElement => (
                 <Input 
                     key={formElement.id}
@@ -124,20 +131,17 @@ const Form = React.memo(props => {
             {form}
         </div>
     );
-});
+};
 
 const mapStateToProps = state => {
     return {
-        loading: state.order.loading,
-        // token: state.auth.token,
-        // userId: state.auth.userId
+        loading: state.email.loading
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        // onSendEmail: (orderData,token) => dispatch(actions.sendEmail(orderData, token))
-        onSendEmail: (orderData) => dispatch(actions.sendEmail(orderData))
+        onSendEmail: (emailData) => dispatch(actions.sendEmail(emailData))
     };
 };
 

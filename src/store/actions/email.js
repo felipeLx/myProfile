@@ -1,10 +1,10 @@
 import * as actionTypes from './actionTypes';
 
-export const sendEmailSuccess = ( id, orderData ) => {
+export const sendEmailSuccess = ( id, emailData ) => {
     return {
         type: actionTypes.SEND_EMAIL_SUCCESS,
-        orderId: id,
-        orderData: orderData
+        emailId: id,
+        emailData: emailData
     };
 };
 
@@ -21,10 +21,10 @@ export const sendEmailStart = () => {
     };
 };
 
-export const sendEmail = ( orderData ) => {
+export const sendEmail = ( emailData ) => {
     return {
         type: actionTypes.SEND_EMAIL,
-        orderData: orderData,
+        emailData: emailData,
     }
 };
 
@@ -37,7 +37,7 @@ export const emailInit = () => {
 export const fetchEmailsSuccess = ( emails ) => {
     return {
         type: actionTypes.FETCH_EMAILS_SUCCESS,
-        orders: emails
+        emails: emails
     };
 };
 

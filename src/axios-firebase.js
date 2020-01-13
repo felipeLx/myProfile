@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-const instance = axios.create({
+export const instance = axios.create({
     baseURL: 'https://imessanger-39b6d.firebaseio.com/'
 });
 
-export default instance;
+export const config = {
+    apiKey: 'AIzaSyCq6ZZvbNRRioXxYpE97448hS7x1t49OZw',
+    databaseURL: 'https://imessanger-39b6d.firebaseio.com/'
+};

@@ -20,4 +20,4 @@ export {
     fetchEmailsSuccess,
     fetchEmailsFail,
     fetchEmailsStart
-} from './order';
+} from './email';

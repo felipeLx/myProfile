@@ -9,13 +9,13 @@ import createSagaMiddleware from 'redux-saga';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import emailReducer from './store/reducers/order';
-import { watchOrder } from './store/sagas';
+import emailReducer from './store/reducers/email';
+import { watchEmail } from './store/sagas';
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 const rootReducer = combineReducers({
-    order: emailReducer
+    email: emailReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -24,7 +24,7 @@ const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk, sagaMiddleware)
 ));
 
-sagaMiddleware.run(watchOrder);
+sagaMiddleware.run(watchEmail);
 
 const app = (
     <Provider store={store}>
