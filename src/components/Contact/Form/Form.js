@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { config, instance } from '../../../axios-firebase';
 import firebase from 'firebase/app';
+import 'firebase/database';
 import axios from 'axios';
 
 import { updateObject, checkValidity } from '../../../shared/utility';
@@ -55,17 +56,13 @@ const Form = props => {
     });
 
     const [formIsValid, setFormIsValid] = useState(false);
-    const [firebaseApp, setFirebaseApp] = useState();
 
     useEffect(() => {
-        if (!firebase) {
-            setFirebaseApp(firebase.initializeApp(config));
-          }
+        firebase.initializeApp(config);
     }, []);
 
     const emailHandler = ( event ) => {
         event.preventDefault();
-        console.log('sent');
         const formData = {};
         for (let formElementIdentifier in sendEmail) {
             formData[formElementIdentifier] = sendEmail[formElementIdentifier].value;
@@ -74,24 +71,20 @@ const Form = props => {
             emailData: formData,
             time: new Date().toDateString()
         }
-        console.log(email.toString());
         const database = firebase.database();
-        if(!firebase){
-            setFirebaseApp(firebase.initializeApp(config));
-        }
         axios.post('https://us-central1-imessanger-39b6d.cloudfunctions.net/submit', email)
             .then(res => {
                 if(firebase){
-                    return database.ref('contact').push(email);
+                    return database.ref('/contact').push(email);
                 }
             })
             .catch(err => {
                 console.log(err);
             });
+            setSendEmail({name:{value:''}, email:{value:''}, message:{value:''}});
     };
 
     const inputChangedHandler = (event, inputIdentifier) => {
-        console.log('inputChangedHandler');
         const updatedFormElement = updateObject(sendEmail[inputIdentifier], {
             value: event.target.value,
             valid: checkValidity(event.target.value, sendEmail[inputIdentifier].validation),

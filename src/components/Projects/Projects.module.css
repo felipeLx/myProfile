@@ -4,8 +4,9 @@
     background-color: black;
     opacity: 0.9;
     padding: 5px;
-    height: 178px;
+    height: auto;
     text-align: center;
+    max-width: 100%;
     display: block;
 }
 

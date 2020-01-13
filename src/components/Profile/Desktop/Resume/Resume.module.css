@@ -20,7 +20,7 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 16px;
     box-shadow: black;
-    width: 60%;
+    max-width: 90%;
     text-align: justify;
     margin: auto;
     padding: 10px;

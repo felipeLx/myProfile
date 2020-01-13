@@ -7,12 +7,12 @@ import JavaScript from './JavaScript/JavaScript';
 import { Row, Col, Button } from 'react-bootstrap';
 
 const Projects = () => (
-    <div>
+    <div style={{textAlign:'center', borderRadius: '10px'}}>
         <Button 
             variant="info"
-            style={{alignItems:'center'}}
             onClick={() => window.open('https://github.com/felipeLx', '_blank')}
         >Much more projects can be found in my GitHub</Button>
+        <hr />
         <Row>
         {/* <div style={{width: '80%', padding:'20px', display: 'inline-block'}}> */}
             <Col><ReactBurger /></Col>

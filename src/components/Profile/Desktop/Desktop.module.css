@@ -1,5 +1,5 @@
 .Desktop {
-    width: 100%;
+    max-width: 100%;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     padding: 10px;
@@ -18,7 +18,7 @@
 .BannerText {
     background-color: black;
     opacity: 0.8;
-    width: 60%;
+    max-width: 90%;
     height: auto;
     margin: 10px auto;
     border-radius: 20px;  

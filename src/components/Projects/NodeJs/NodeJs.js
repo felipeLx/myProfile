@@ -15,7 +15,7 @@ const NodeJs = () => {
     <Card.Body className={classes.Projects}>
       <Card.Title>NodeJs</Card.Title>
       <Card.Text>
-        NodeJs - MVC Rest learned in course with Microsoft in the EDX platform.
+        NodeJs - MVC Rest learned in course with Microsoft at the EDX platform.
       </Card.Text>
       <Button variant="primary" onClick={openGithub}>Github</Button>
     </Card.Body>

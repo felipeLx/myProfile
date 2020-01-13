@@ -16,7 +16,6 @@ const Map = props => {
     const [showSpainComponent, setShowSpainComponent] = useState(false);
 
     const openRio = () => {
-        console.log('openRio');
         if(!showRioComponent){
             setShowRioComponent(true);
             setShowMap(false);
@@ -24,7 +23,6 @@ const Map = props => {
     }
     
     const openFloripa = () => {
-        console.log('openFloripa');
         if(!showFloripaComponent) {
             setShowFloripaComponent(true);
             setShowMap(false);
@@ -32,7 +30,6 @@ const Map = props => {
     }
 
     const openLisbon = () => {
-        console.log('openLisbon');
         if(!showLisbonComponent) {
             setShowLisbonComponent(true);
             setShowMap(false);
@@ -40,7 +37,6 @@ const Map = props => {
     }
 
     const openSpain = () => {
-        console.log('openSpain');
         if(!showSpainComponent) {
             setShowSpainComponent(true);
             setShowMap(false);
