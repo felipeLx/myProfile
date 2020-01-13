@@ -55,35 +55,37 @@ const Map = props => {
         setShowSpainComponent(false);
     }
 
-    window.onload = function () {
-        var ImageMap = function (map, img) {
-                var n,
-                    areas = map.getElementsByTagName('area'),
-                    len = areas.length,
-                    coords = [],
-                    previousWidth = 128;
-                for (n = 0; n < len; n++) {
-                    coords[n] = areas[n].coords.split(',');
-                }
-                this.resize = function () {
-                    var n, m, clen,
-                        x = img.offsetWidth / previousWidth;
-                    for (n = 0; n < len; n++) {
-                        clen = coords[n].length;
-                        for (m = 0; m < clen; m++) {
-                            coords[n][m] *= x;
-                        }
-                        areas[n].coords = coords[n].join(',');
-                    }
-                    previousWidth = document.body.clientWidth;
-                    return true;
-                };
-                window.onresize = this.resize;
-            },
-            imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
-        imageMap.resize();
-        return;
-    }
+    // const sizeImageHandler = () => {
+    //     window.onload = function () {
+    //         let ImageMap = function (map, img) {
+    //                 let n,
+    //                     areas = map.getElementsByTagName('area'),
+    //                     len = areas.length,
+    //                     coords = [],
+    //                     previousWidth = 128;
+    //                 for (n = 0; n < len; n++) {
+    //                     coords[n] = areas[n].coords.split(',');
+    //                 }
+    //                 this.resize = function () {
+    //                     let n, m, clen,
+    //                         x = img.offsetWidth / previousWidth;
+    //                     for (n = 0; n < len; n++) {
+    //                         clen = coords[n].length;
+    //                         for (m = 0; m < clen; m++) {
+    //                             coords[n][m] *= x;
+    //                         }
+    //                         areas[n].coords = coords[n].join(',');
+    //                     }
+    //                     previousWidth = document.body.clientWidth;
+    //                     return true;
+    //                 };
+    //                 window.onresize = this.resize;
+    //             },
+    //             imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+    //         imageMap.resize();
+    //         return;
+    //     }
+    // };
 
     return (
         <>
@@ -96,16 +98,16 @@ const Map = props => {
             </div>
         }
         
-        <div>
-            <map name="map" id="mapID">
-                <div className={classes.Area} >
-                <area alt="rio" shape="poly" coords="460,789,493,816" onClick={openRio} />
+        <div className={classes.Map}>
+            <map name="map" id="mapID" >
+                <div className={classes.Area}>
+                <area alt="rio" shape="poly" coords="447,817,509,817,479,746" onClick={openRio} />
                     {showRioComponent && <Rio />}
-                <area alt="floripa" shape="poly" coords="403,878,430,901" onClick={openFloripa} />
+                <area alt="floripa" shape="poly" coords="383,902,443,903,418,837" onClick={openFloripa} />
                     {showFloripaComponent && <Floripa />}
-                <area alt="spain" shape="poly" coords="798,113,830,140" onClick={openSpain} />
+                <area alt="spain" shape="poly" coords="780,86,866,112,800,169" onClick={openSpain} />
                     {showSpainComponent && <Spain />}
-                <area alt="lisbon" shape="poly" coords="723,134,757,160" onClick={openLisbon} />
+                <area alt="lisbon" shape="poly" coords="696,165,775,164,745,75" onClick={openLisbon} />
                     {showLisbonComponent && <Lisbon />}
                 </div>
             </map>
@@ -114,9 +116,6 @@ const Map = props => {
                 <img 
                     id="img_ID"
                     src={map} 
-                    style={{
-                        width:'100%', border:'0', cursor:'pointer'
-                    }}
                     alt="world experience"
                     useMap="#map" /> :
                 <Button 
