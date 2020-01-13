@@ -114,10 +114,11 @@ const Map = props => {
                 <img 
                     id="img_ID"
                     src={map} 
-                    width="100%"
-                    border="0"
+                    style={{
+                        width:'100%', border:'0', cursor:'pointer'
+                    }}
                     alt="world experience"
-                    usemap="#map" /> :
+                    useMap="#map" /> :
                 <Button 
                     style={{textAlign: 'center'}}
                     variant="outline-dark" 
