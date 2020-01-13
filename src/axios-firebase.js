@@ -6,6 +6,6 @@ export const instance = axios.create({
 
 export const config = {
     apiKey: 'AIzaSyCq6ZZvbNRRioXxYpE97448hS7x1t49OZw',
-    authDomain: 'imessanger-39b6d.web.app',
+    authDomain: 'imessanger-39b6d.firebaseapp.com',
     databaseURL: 'https://imessanger-39b6d.firebaseio.com/'
 };

@@ -1,12 +1,16 @@
-.Map {
+.Map img{
     text-align: center;
     margin: auto;
-    display: inline-flexbox;
+    height: auto;
+    max-width: 100%;
+    padding-left: 10px;
 }
 
     
 .Area :hover {
     cursor: pointer;
+    height: auto;
+    max-width: 100%;
     /* -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -34,8 +38,7 @@
 
 .Header {
     text-align: center;
+    max-width: 80%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: grid;  
-    padding-left: 10px;
     color: rgb(103, 39, 223);
 }

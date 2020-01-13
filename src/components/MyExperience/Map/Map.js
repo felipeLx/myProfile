@@ -53,7 +53,36 @@ const Map = props => {
         setShowFloripaComponent(false);
         setShowLisbonComponent(false);
         setShowSpainComponent(false);
+    }
 
+    window.onload = function () {
+        var ImageMap = function (map, img) {
+                var n,
+                    areas = map.getElementsByTagName('area'),
+                    len = areas.length,
+                    coords = [],
+                    previousWidth = 128;
+                for (n = 0; n < len; n++) {
+                    coords[n] = areas[n].coords.split(',');
+                }
+                this.resize = function () {
+                    var n, m, clen,
+                        x = img.offsetWidth / previousWidth;
+                    for (n = 0; n < len; n++) {
+                        clen = coords[n].length;
+                        for (m = 0; m < clen; m++) {
+                            coords[n][m] *= x;
+                        }
+                        areas[n].coords = coords[n].join(',');
+                    }
+                    previousWidth = document.body.clientWidth;
+                    return true;
+                };
+                window.onresize = this.resize;
+            },
+            imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+        imageMap.resize();
+        return;
     }
 
     return (
@@ -67,26 +96,30 @@ const Map = props => {
             </div>
         }
         
-        <div className={classes.Map}>
-            <map name="map">
+        <div>
+            <map name="map" id="mapID">
                 <div className={classes.Area} >
-                <area alt="rio" shape="rect" coords="460,789,493,816" onClick={openRio} />
+                <area alt="rio" shape="poly" coords="460,789,493,816" onClick={openRio} />
                     {showRioComponent && <Rio />}
-                <area alt="floripa" shape="rect" coords="403,878,430,901" onClick={openFloripa} />
+                <area alt="floripa" shape="poly" coords="403,878,430,901" onClick={openFloripa} />
                     {showFloripaComponent && <Floripa />}
-                <area alt="spain" shape="rect" coords="798,113,830,140" onClick={openSpain} />
+                <area alt="spain" shape="poly" coords="798,113,830,140" onClick={openSpain} />
                     {showSpainComponent && <Spain />}
-                <area alt="lisbon" shape="rect" coords="723,134,757,160" onClick={openLisbon} />
+                <area alt="lisbon" shape="poly" coords="723,134,757,160" onClick={openLisbon} />
                     {showLisbonComponent && <Lisbon />}
                 </div>
             </map>
             <div>
             {showMap ? 
                 <img 
+                    id="img_ID"
                     src={map} 
+                    width="100%"
+                    border="0"
                     alt="world experience"
-                    useMap="#map" /> :
+                    usemap="#map" /> :
                 <Button 
+                    style={{textAlign: 'center'}}
                     variant="outline-dark" 
                     onClick={openMap}>
                         Show the map again!!
