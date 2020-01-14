@@ -1,10 +1,12 @@
 .Map {
-    text-align: center;
-    margin: auto;
+    margin-top: 20px;
     height: auto;
     max-width: 100%;
     padding-left: 10px;
+    padding-top: 20px;
     background-image: url('https://lh3.googleusercontent.com/rvMIKne7Y329BTJf0vAzA9bNLxtoh6vfl2QWMJdj4Fk9HodeDSxDj5n74Q4vv5e5hsheOlRanBCgEyCDch0Ubj-n8xUcVb5FChGVxVbJaddvAjK4INDHbO8nFWk5v5MY3uEcTQcbtf8AW_Eja6Cs16Sc-JVnHxHdxmQDbqyIx3p0t8VCDdC8KrvYz_fFpv-paP3UgfLlgeZFg-O3f4P2WKYyZv4jXe2acDIycXR3BRl6NkR4OvOVnKoLqnYAI8vgAn2Afvlp7esmU9qhTYsFPt1W62j_J0vd-8SeSI6K1h-07s3gpW0N8Cd1ZLswKgj0OGhE7ZEfgm8-PpJVJZH4FTTnlycifZ6nLdaUz-NCp0hxPTa7yAgzOUkS5NFofQd1E6eSOfwGnHf16tfTNe349mA5gyglHsiJks9xArh_r0gGxop1agOnlP8rK47RpQAGUwU3NWqR_LeFXmzA1AzXcS1V08MOGiOlsp2TMxX0KYShjMvnNuRRGWzVk9TJ3w2OIbDbJWXOjVAvJza-zcVLbVuKt-ycnKr9_SgRvVzACCc63AIBFtNhi1kcbJzMiJ5UrruvUUOyJFCAj20J4rm9sFI5H8i1hT1RVE6l2PnJMJ9RBCQHBios6Mwl3kjDj9IfV6EtjLweSc15ixIVCBl7yHwBRVQvK0L9Vz1zlUUc9bpeXw9f3x3I-GA=w718-h637-no');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
     
@@ -42,4 +44,28 @@
     max-width: 100%;
     color: rgb(103, 39, 223);
     height: auto;
+}
+
+.Rio {
+    position: relative;
+    left: 30px;
+    bottom: 50px;
+}
+
+.Floripa {
+    position: relative;
+    left: 20px;
+    bottom: 20px;
+}
+
+.Lisbon {
+    position: relative;
+    right: 40px;
+    top: 40px;
+}
+
+.Spain {
+    position: relative;
+    right: 30px;
+    top: 30px;
 }

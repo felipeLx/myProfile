@@ -51,37 +51,37 @@ const Map = props => {
         setShowSpainComponent(false);
     }
 
-    useEffect(() => {
-        window.onload = function () {
-            let ImageMap = function (map, img) {
-                    let n,
-                        areas = map.getElementsByTagName('area'),
-                        len = areas.length,
-                        coords = [],
-                        previousWidth = 128;
-                    for (n = 0; n < len; n++) {
-                        coords[n] = areas[n].coords.split(',');
-                    }
-                    this.resize = function () {
-                        let n, m, clen,
-                            x = img.offsetWidth / previousWidth;
-                        for (n = 0; n < len; n++) {
-                            clen = coords[n].length;
-                            for (m = 0; m < clen; m++) {
-                                coords[n][m] *= x;
-                            }
-                            areas[n].coords = coords[n].join(',');
-                        }
-                        previousWidth = document.body.clientWidth;
-                        return true;
-                    };
-                    window.onresize = this.resize;
-                },
-                imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
-            imageMap.resize();
-            return;
-        }
-    },[]); 
+    // useEffect(() => {
+    //     window.onload = function () {
+    //         let ImageMap = function (map, img) {
+    //                 let n,
+    //                     areas = map.getElementsByTagName('area'),
+    //                     len = areas.length,
+    //                     coords = [],
+    //                     previousWidth = 128;
+    //                 for (n = 0; n < len; n++) {
+    //                     coords[n] = areas[n].coords.split(',');
+    //                 }
+    //                 this.resize = function () {
+    //                     let n, m, clen,
+    //                         x = img.offsetWidth / previousWidth;
+    //                     for (n = 0; n < len; n++) {
+    //                         clen = coords[n].length;
+    //                         for (m = 0; m < clen; m++) {
+    //                             coords[n][m] *= x;
+    //                         }
+    //                         areas[n].coords = coords[n].join(',');
+    //                     }
+    //                     previousWidth = document.body.clientWidth;
+    //                     return true;
+    //                 };
+    //                 window.onresize = this.resize;
+    //             },
+    //             imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+    //         imageMap.resize();
+    //         return;
+    //     }
+    // },[]); 
         
 
     return (
@@ -94,7 +94,19 @@ const Map = props => {
                 <h6>There you can find my academic experience, too!!</h6>
             </div>
         }
-        <hr />
+            <div className={classes.Rio}>
+                <Button variant='success'>RJ</Button>
+            </div>
+            <div className={classes.Floripa}>
+                <Button variant='success'>SC</Button>
+            </div>
+            <div className={classes.Lisbon}>
+                <Button variant='success'>LX</Button>
+            </div>
+            <div className={classes.Spain}>
+                <Button variant='success'>CAT</Button>
+            </div>
+        {/* <hr />
         <hr />
         <div className={classes.Map}>
             <map name="map" id="mapID" >
@@ -122,10 +134,10 @@ const Map = props => {
                     onClick={openMap}>
                         Show the map again!!
                 </Button> 
-            }
+            } */}
             </div>
-        </div>
-        </div>
+        {/* </div>
+        </div> */}
         </>
     );
 };
