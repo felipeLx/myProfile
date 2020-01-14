@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
 import classes from './Map.module.css';
-import map from '../../../assets/images/myexp.png';
+import map from '../../../assets/images/face.png';
 import Rio from './Rio/Rio';
 import Floripa from './Floripa/Floripa';
 import Lisbon from './Lisbon/Lisbon';
@@ -51,7 +51,7 @@ const Map = props => {
         setShowSpainComponent(false);
     }
 
-    const sizeImageHandler = () => {
+    useEffect(() => {
         window.onload = function () {
             let ImageMap = function (map, img) {
                     let n,
@@ -81,7 +81,8 @@ const Map = props => {
             imageMap.resize();
             return;
         }
-    };
+    },[]); 
+        
 
     return (
         <>
@@ -111,7 +112,6 @@ const Map = props => {
             <div>
             {showMap ? 
                 <img 
-                    onChange={sizeImageHandler}
                     id="img_ID"
                     src={map} 
                     alt="world experience"
