@@ -38,7 +38,7 @@
 
 .Header {
     text-align: center;
-    max-width: 80%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 100%;
     color: rgb(103, 39, 223);
+    height: auto;
 }

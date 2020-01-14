@@ -85,15 +85,15 @@ const Map = props => {
 
     return (
         <>
-        
+        <div style={{alignItems: 'center'}}>
         {showMap &&
             <div className={classes.Header}>
                 <h3>The most relevant experiences in my professional career</h3>
-                <h4>To see all, please check my <a href="https://linkedin.com/in/felipealisboa" rel="noopener noreferrer" target="_blank"><strong>Linkedin profile</strong></a></h4>
-                <h5>There you can find my academic experience, too!!</h5>
+                <h5>To see all, please check my <a href="https://linkedin.com/in/felipealisboa" rel="noopener noreferrer" target="_blank"><strong>Linkedin profile</strong></a></h5>
+                <h6>There you can find my academic experience, too!!</h6>
             </div>
         }
-        
+        <hr />
         <div className={classes.Map}>
             <map name="map" id="mapID" >
                 <div className={classes.Area}>
@@ -122,6 +122,7 @@ const Map = props => {
                 </Button> 
             }
             </div>
+        </div>
         </div>
         </>
     );

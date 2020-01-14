@@ -17,7 +17,7 @@ const Rio = () => {
             <hr />
             <div className="d-flex justify-content-end">
               <Button onClick={() => setShowJucai(false)} variant="outline-warning">
-                Close me!!
+                Close
               </Button>
             </div>
           </Alert>
@@ -32,7 +32,7 @@ const Rio = () => {
             <hr />
             <div className="d-flex justify-content-end">
               <Button onClick={() => setShowOthers(false)} variant="outline-info">
-                Close me!!
+                Close
               </Button>
             </div>
           </Alert>

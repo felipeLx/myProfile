@@ -15,7 +15,7 @@ const Lisbon = () => {
           <hr />
           <div className="d-flex justify-content-end">
             <Button onClick={() => setShow(false)} variant="outline-info">
-              Close me!!
+              Close me
             </Button>
           </div>
         </Alert>

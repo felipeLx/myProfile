@@ -82,6 +82,7 @@ const Form = props => {
                 console.log(err);
             });
             setSendEmail({name:{value:''}, email:{value:''}, message:{value:''}});
+            alert('Email sent!');
     };
 
     const inputChangedHandler = (event, inputIdentifier) => {
