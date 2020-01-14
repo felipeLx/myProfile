@@ -2,7 +2,7 @@
     text-align: center;
     margin: auto;
     height: auto;
-    width: 100%;
+    max-width: 100%;
     padding-left: 10px;
 }
 

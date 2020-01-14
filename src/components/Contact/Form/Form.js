@@ -41,7 +41,7 @@ const Form = props => {
             touched: false
         },
         message: {
-            elementType: 'input',
+            elementType: 'textarea',
             elementConfig: {
                 type: 'text',
                 placeholder: 'Message'
