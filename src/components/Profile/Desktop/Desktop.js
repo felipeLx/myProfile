@@ -3,29 +3,27 @@ import { Grid, Cell } from 'react-mdl';
 
 import classes from './Desktop.module.css';
 import Resume from './Resume/Resume';
-import profile from '../../../assets/images/1.JPG';
-// import Photos from './Photos';
+import Header from '../../Header/Header'
 
 const Desktop = () => {
 
     return(
-    <div style={{width:'90%', margin: 'auto', textAlign: 'center'}}>
-        <Grid>
-            <Cell col={12}>
-                <img className={classes.Picture} src={profile} alt="avatar" />
-                <div className={classes.BannerText}>
-                    <h1>Full Stack Developer</h1>
-                    <hr />
-                    <p>HTML/CSS | JavaScript | React | NodeJS | Java | Spring | mySQL | mongoDB</p>
-                    <div>
-                        <a href="https://linkedin.com/in/felipealisboa" rel="noopener noreferrer" target="_blank">
-                        <i className="fab fa-linkedin"></i>
-                        </a>
+    <div style={{width:'100%', textAlign: 'center'}}>
+        <Header />
+        <section id='profile' className={classes.Desktop}>
+            <div className={classes.BannerText}>
+                        <h1>Full Stack Developer</h1>
+                        <div>
+                        <span className={classes.Techs}><strong>HTML/CSS - JavaScript - React - NodeJS - Java - Spring - mySQL - mongoDB</strong></span>
+                        </div>
+                        <div className={classes.Links}>
+                            <a href="https://linkedin.com/in/felipealisboa" rel="noopener noreferrer" target="_blank">
+                            <i style={{color:'black'}} className="fab fa-linkedin"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </Cell>
-        </Grid>
-        <Resume />
+            <Resume />
+        </section>
     </div>
 
     );

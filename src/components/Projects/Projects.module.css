@@ -1,12 +1,66 @@
 .Projects {
-    margin: auto;
     color: white;
-    background-color: black;
-    opacity: 0.9;
-    padding: 5px;
-    height: auto;
+    background-color: #3282b8;
+    padding: 20px 0;
     text-align: center;
-    max-width: 100%;
-    display: block;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column;
+    align-content: space-between;
+    align-items: center;
 }
+
+/* .Projects div {
+    display: flex;
+    padding: 20px;
+    width: 40%;
+    flex-flow: column;
+} */
+
+.Stage {
+    width: 90%;
+    height: 100%;
+    display: inline-flex;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    flex-flow: column;
+}
+
+.Sphere {
+    display: flex;
+    flex-flow: row;
+    border-radius: 50%;
+    width: 90%;
+    height: 100%;
+    margin: 0;
+    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+}
+
+.Sphere:before{
+    top: 1%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+    filter: blur(5px);
+    z-index: 2;
+}
+
+.Shadow {
+    z-index: -1;
+    background-color: black;
+    transform: rotateX(90deg) translateZ(-150px);
+}
+
+
+@media (max-height: 280px) and (max-width: 280px) {
+    .Sphere{
+        width: 280px;
+        height: 280px;
+    }
+}
+
+
 

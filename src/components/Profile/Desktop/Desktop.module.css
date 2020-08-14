@@ -1,22 +1,10 @@
 .Desktop {
     max-width: 100%;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc;
     padding: 10px;
-    margin: 10px auto;
-    box-sizing: border-box;
-}
-
-.Picture {
-    width: 200px;
-    height: 250px;
-    text-align: center;
-    margin: 10px auto;
-    border-radius: 40px;
+    background-color: #3282b8;
 }
 
 .BannerText {
-    background-color: black;
     opacity: 0.8;
     max-width: 90%;
     height: auto;
@@ -30,14 +18,17 @@
     color: white;
 }
 
-.BannerText hr {
-    border-top: 5px dotted white;
-    width: 50%;
-    margin: auto;
+.Links a i{
+    padding: 15px;
 }
 
-.BannerText p {
-    color: white;
-    font-size: 20px;
+.Links a i:hover {
+    -moz-transform: scale(3);
+  -webkit-transform: scale(3);
+  -o-transform: scale(3);
+  outline-color: red;
+}
+
+.Techs {
     padding: 5px;
 }

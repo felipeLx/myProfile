@@ -4,6 +4,7 @@ import Aux from '../Aux/Aux';
 import classes from './Layout.module.css';
 import Navbar from '../../components/Tolbar/toolbar/Navbar';
 import SideDrawer from '../../components/Tolbar/SideDrawer/SideDrawer';
+import Footer from '../../components/Footer/Footer'
 
 const layout = React.memo(props => {
     const [showSideDrawer, setShowSideDrawer] = useState(false);
@@ -26,6 +27,7 @@ const layout = React.memo(props => {
                 <main className={classes.Content}>
                     {props.children}
                 </main>
+                <Footer />
             </Aux>
         )
 });

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Form from '../../components/Contact/Form/Form';
-
-const Contact = (props) => {
+const Contact = () => {
     return(
         <div>
-            <Form />
+            <a href='emailto:felipealisboa@outlook.com' target='_blank'>Contact Me!</a>
         </div>
     );
 };

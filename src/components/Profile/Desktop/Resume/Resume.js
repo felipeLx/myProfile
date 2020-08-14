@@ -3,28 +3,10 @@ import { Grid, Cell } from 'react-mdl';
 
 import classes from './Resume.module.css';
 
-const Resume = () => {
-    const [openProfile, setOpenProfile] = useState(false);
-
-    const profileOpenHandler = () => {
-        if(!openProfile) {
-            setOpenProfile(true);
-        } else {
-            setOpenProfile(false);
-        }
-    }
-
-    const defineSign = () => {
-        if(!openProfile) {
-            return "+";
-        } else {
-            return "-";
-        }
-    }
-    return(
-        <div>
-            <button className={classes.Button} onClick={profileOpenHandler}>{defineSign()}</button>
-            {openProfile && <Grid className={classes.Profile}>
+const Resume = () => (
+        <section>
+            <Grid className={classes.Profile}>
+                <h1>Profile</h1>
                 <Cell col={4}>
                     <p>When I saw some code working for the first time I thought that was some magic.
                     After I learned Java in Academia de Código with the best teachers ever. 
@@ -39,9 +21,8 @@ const Resume = () => {
                     for the FrontEnd I'm going deep in JavaScript and React and 
                     for Database I'm still be studying using MongoDB, Firebase or mySQL.</p>
                 </Cell>
-            </Grid>}
-        </div>
-    );
-};
+            </Grid>
+        </section>
+);
 
 export default Resume;

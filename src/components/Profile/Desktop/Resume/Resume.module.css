@@ -17,15 +17,12 @@
 .Profile {
     box-sizing: border-box;
     border-radius: 10px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 16px;
+    font-size-adjust: inherit;
     box-shadow: black;
     max-width: 90%;
     text-align: justify;
     margin: auto;
     padding: 10px;
-    border: 2px solid gray;
-    background-color:  #0052D4;
-    opacity: 0.8;
+    z-index: 10;
     color: white;
 }
