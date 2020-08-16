@@ -20,21 +20,26 @@
 
 .Stage {
     width: 90%;
-    height: 100%;
+    min-height: 500px;
     display: inline-flex;
     perspective: 1200px;
     perspective-origin: 50% 50%;
     flex-flow: column;
+    border-radius: 50%;
+    background: black;
 }
 
-.Sphere {
+.Sphere .Shadow{
     display: flex;
     flex-flow: row;
     border-radius: 50%;
     width: 90%;
     height: 100%;
     margin: 0;
-    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    transform: rotateX(90deg) translateZ(-150px);
+    z-index: -1;
+    background: black;
+      
 }
 
 .Sphere:before{
@@ -62,5 +67,11 @@
     }
 }
 
+@media (max-height: 280px) and (max-width: 280px) {
+    .Sphere{
+        width: 280px;
+        height: 280px;
+    }
+}
 
 

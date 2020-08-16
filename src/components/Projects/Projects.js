@@ -1,36 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import classes from './Projects.module.css'
-import ReactBurger from './React/ReactBurger';
-import SpringMaster from './Spring/SpringMaster';
-import NodeJs from './NodeJs/NodeJs';
 import Aux from '../../hoc/Aux/Aux'
-import JavaScript from './JavaScript/JavaScript';
-import { Row, Col, Button } from 'react-bootstrap';
+import project from './projectsList.json'
+import { Card, Button, Carousel } from 'react-bootstrap';
+import Globe from '../Header/globe'
 
-const Projects = () => (
-    
+const Projects = () => {
+    const [index, setIndex] = useState(0)
+
+    const handleSelect = (selectedIndex, project) => {
+        setIndex(selectedIndex)
+    }
+
+    return(
         <Aux>
             <section className={classes.Projects} >
+            
             <Button 
                 variant="info"
                 onClick={() => window.open('https://github.com/felipeLx', '_blank')}
             >Much more projects can be found in my GitHub</Button>
         
             <hr />
-            {/* <Row className={classes.Sphere}>
-                <Col><ReactBurger /></Col>
-                <Col><JavaScript /></Col>
-                <Col><NodeJs /></Col>
-                <Col><SpringMaster /></Col>
-            </Row> */}
+            
+            <Carousel style={{width: '100%'}} activeIndex={index} onSelect={handleSelect}>
                 <div className={classes.Stage}>
-                    <figure className={classes.Sphere}>
-                        <span className={classes.Shadow}></span>
-                    </figure>
+                    <div className={classes.Sphere}>
+                        <div className={classes.Shadow}></div>
+                    </div>
                 </div>
+            </Carousel>
             </section>
         </Aux>
-    );
+    )
+};
 
 export default Projects;
