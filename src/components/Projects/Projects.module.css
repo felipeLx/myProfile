@@ -1,14 +1,10 @@
 .Projects {
-    color: white;
+    color: black;
     background-color: #3282b8;
     padding: 20px 0;
     text-align: center;
     width: 100%;
     height: 100%;
-    display: inline-flex;
-    flex-flow: column;
-    align-content: space-between;
-    align-items: center;
 }
 
 /* .Projects div {
@@ -20,58 +16,117 @@
 
 .Stage {
     width: 90%;
-    min-height: 500px;
-    display: inline-flex;
+    height: 800px;
     perspective: 1200px;
     perspective-origin: 50% 50%;
-    flex-flow: column;
     border-radius: 50%;
     background: black;
+    display: inline-block;
+    padding: 100px 0;
+    
 }
 
-.Sphere .Shadow{
-    display: flex;
-    flex-flow: row;
-    border-radius: 50%;
-    width: 90%;
+
+@media (max-height: 280px) and (max-width: 280px) {
+    .Stage{
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-height: 280px) and (max-width: 280px) {
+    .Stage{
+        width: 280px;
+        height: 280px;
+    }
+}
+
+.Carousel {
+    padding-top: 40px;
+    transform-style: preserve-3d;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+}
+
+@media (max-height: 600px) and (max-width: 800px) {
+    .Carousel {
+        padding-top: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Middle {
+        width: 10rem;
+        right: 0;
+    }
+
+    .Before {
+        width: 10rem;
+        left: 0;
+    }
+
+    .After {
+        width: 10rem;
+        right: 0;
+    }
+}
+
+@media (min-width: 0) and (max-width: 450px) {
+    .Carousel {
+        padding-top: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Middle {
+        width: 10rem;
+        right: 0;
+    }
+
+    .Before {
+        display: none;
+    }
+
+    .After {
+        display: none;
+    }
+}
+
+.Middle {
+    display: inline-flex;
     height: 100%;
-    margin: 0;
-    transform: rotateX(90deg) translateZ(-150px);
-    z-index: -1;
-    background: black;
-      
+    top: 50px;
+    font-weight: bold;
+    right: 50%;
 }
 
-.Sphere:before{
-    top: 1%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    border-radius: 50%;
-    background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
-    filter: blur(5px);
-    z-index: 2;
+.Before {
+    display: inline-flex;
+    height: 80%;
+    top: 40px;
+    left: 80px;
+    transform: rotateY(-1.0rad) translateX(0px) translateZ(-20px);
+    opacity:  1; 
 }
 
-.Shadow {
-    z-index: -1;
-    background-color: black;
-    transform: rotateX(90deg) translateZ(-150px);
+.After {
+    display: inline-flex;
+    height: 80%;
+    top: 40px;
+    right: 80px;    
+    transform: rotateY(1.047rad) translateX(0px) translateZ(-20px);
+    opacity:  1;
 }
 
-
-@media (max-height: 280px) and (max-width: 280px) {
-    .Sphere{
-        width: 280px;
-        height: 280px;
-    }
+.Controls :hover {
+    background: none;
+    
+    align-content: center;
+    outline-color: red;
 }
 
-@media (max-height: 280px) and (max-width: 280px) {
-    .Sphere{
-        width: 280px;
-        height: 280px;
-    }
+.Controls {
+    background: none;
+    align-content: center;
 }
-
-

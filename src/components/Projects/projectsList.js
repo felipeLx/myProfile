@@ -1,10 +1,9 @@
-{
-    "projects":
+const projectsList =
         [{
             "name": "MERN",
             "image": "https://miro.medium.com/max/700/1*k0SazfSJ-tPSBbt2WDYIyw.png",
             "link": "http://loja-lisboa.herokuapp.com",
-            "description": "Complete project with User and Admin UI with React Hooks" 
+            "description": "Complete project with User and Admin UI - 100% React Hooks" 
         },
         {
             "name": "NodeJs + ejs",
@@ -79,4 +78,5 @@
             "description": "Builder with Baeldung Course" 
         }
     ]
-}
+
+    export default projectsList

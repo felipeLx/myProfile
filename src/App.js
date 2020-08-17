@@ -4,13 +4,9 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import Profile from './containers/Profile/Profile';
 import Layout from './hoc/Layout/Layout';
 
-const Experience = React.lazy(() => {
-  return import('./containers/Experience/Experience');
-});
-
-const Contact = React.lazy(() => {
-  return import('./containers/Contact/Contact');
-});
+// const Experience = React.lazy(() => {
+//   return import('./containers/Experience/Experience');
+// });
 
 const Project = React.lazy(() => {
   return import('./containers/Project/Project');
@@ -20,9 +16,8 @@ const app = React.memo(props => {
   
   let routes = (
     <Switch>
-      <Route path="/experience" render={props => <Experience {...props} />} />
+      {/* <Route path="/experience" render={props => <Experience {...props} />} /> */}
       <Route path="/project" render={props => <Project {...props} />} />
-      <Route path="/contact" render={props => <Contact {...props} />} />
       <Route path="/" exact component={Profile} />
       <Redirect to="/" />
     </Switch>

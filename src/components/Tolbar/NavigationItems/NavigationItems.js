@@ -8,8 +8,7 @@ const NavigationItems = (props) => (
         <NavigationItem link="/profile" exact>Profile</NavigationItem>
         {/* <NavigationItem link="/experience">Experience</NavigationItem> */}
         <NavigationItem link="/project">Projects</NavigationItem>
-        <NavigationItem link="/contact">Contact</NavigationItem>
-        {/* <NavigationItem link="/auth">Login</NavigationItem> */}
+        <a href={'mailto: felipealisboa@outlook.com'}>Contact</a>
     </ul>
 );
 
