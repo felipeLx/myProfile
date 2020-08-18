@@ -1,11 +1,52 @@
-.header-anime {
+.HeaderAnime {
     background-color: #0f4c75;
     display: flex;
+    width: 100%;
     flex-flow: row;
+    align-items: center;
     align-content: space-between;
+    padding-top: 30px;
 }
 
-.css-anime {
+.Picture {
+  display: flex;
+  flex-flow: wrap;
+  left: 100px;
+}
+
+.Picture figure img{
+  width: 230px;
+  display: flex;
+  padding-right: 40px;
+}
+
+
+.BannerText {
+  opacity: 0.8;
+  max-width: 90%;
+  height: auto;
+  margin: 10px auto;
+  border-radius: 20px;  
+  color: white;
+}
+
+.BannerText h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.Links a i{
+  padding: 15px;
+}
+
+.Links a i:hover {
+  -moz-transform: scale(3);
+-webkit-transform: scale(3);
+-o-transform: scale(3);
+}
+
+.CssAnime {
     width: 80%;
     height: 250px;
     text-align: center;
@@ -14,7 +55,7 @@
     overflow: hidden;
 }
 
-.cloud-intro{
+.CloudIntro{
   position: relative;
   height: 100%;
   background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);
@@ -34,7 +75,7 @@
   }
 }
 
-.sky {
+.Sky {
   position: relative;
   height: 100%;
   border-radius: 40px;
@@ -49,53 +90,17 @@
   100% {background-color:red; }
 }
 
-.tech1 {
+.Tech1 {
   position: relative;
   height: 100%;
   width: 80%;
-  animation: tech 5s linear infinite;
-  padding-top: 10px;
-  text-orientation: sideways-right;
-  text-transform: uppercase;
+  animation: tech 7s linear infinite;
+  padding-top: 30px;
   animation-direction: alternate-reverse;
 }
 
 @keyframes tech {
-  0% {transform:  scale(2, 3) translate(-20px,50px);}
-  50%  {transform: scale(2, 3) translate(200px,100px); }
-  100% {transform: scale(2, 3) translate(100px, 200px);}
-}
-
-.tech2 {
-  position: relative;
-  height: 100%;
-  width: 80%;
-  animation: tech2 5s linear infinite;
-  padding-top: 10px;
-  text-orientation: sideways-right;
-  text-transform: lowercase;
-  animation-direction: alternate;
-}
-
-@keyframes tech2 {
-  0% {transform:  scale(2, 3) translate(-20px,50px);}
-  50%  {transform: scale(2, 3) translate(200px,100px); }
-  100% {transform: scale(2, 3) translate(100px, 200px);}
-}
-
-.tech3 {
-  position: relative;
-  height: 100%;
-  width: 80%;
-  animation: tech3 5s linear infinite;
-  padding-top: 10px;
-  text-orientation: sideways;
-  text-transform: capitalize;
-  animation-direction: normal;
-}
-
-@keyframes tech3 {
-  0% {transform:  translate(300px,200px);}
-  50%  {transform: translate(200px,100px); }
-  100% {transform: translate(50px, 200px);}
+  0% {transform:  translate(-180px,120px);}
+  50%  {transform: translate(130px,40px); }
+  100% {transform: translate(50px, 120px);}
 }

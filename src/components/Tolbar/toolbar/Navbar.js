@@ -9,7 +9,6 @@ const Navbar = ( props ) => (
     <header className={classes.Navbar}>
          <DrawerToggle clicked={props.drawerToggleClicked} />
         <div className={classes.Logo}>
-         <Picture />
         </div>
         <nav className={classes.DesktopOnly}>   
             <NavigationItems />

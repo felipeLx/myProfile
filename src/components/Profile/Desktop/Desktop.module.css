@@ -4,31 +4,28 @@
     background-color: #3282b8;
 }
 
-.BannerText {
-    opacity: 0.8;
-    max-width: 90%;
-    height: auto;
-    margin: 10px auto;
-    border-radius: 20px;  
+.Techs {
+    padding: 5px;
 }
 
-.BannerText h1 {
-    font-size: 30px;
-    font-weight: bold;
+.Skills {
+    background-color: #0f4c75;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size-adjust: inherit;
+    box-shadow: black;
+    max-width: 90%;
+    text-align: justify;
+    margin: auto;
+    padding: 10px;
+    z-index: 10;
     color: white;
 }
 
-.Links a i{
-    padding: 15px;
-}
-
-.Links a i:hover {
-    -moz-transform: scale(3);
-  -webkit-transform: scale(3);
-  -o-transform: scale(3);
-  outline-color: red;
-}
-
-.Techs {
-    padding: 5px;
+.Gifs {
+    display: inline-flex;
+    align-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-flow: row;
 }

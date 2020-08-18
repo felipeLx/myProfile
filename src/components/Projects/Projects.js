@@ -9,6 +9,8 @@ const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(1)
     const [isPlaying, setIsPlaying] = useState(false)
     const [isMedia, setIsMedia] = useState(false)
+    const [windowSize, setWindowSize] = useState(document.documentElement.clientWidth)
+    
     
     useEffect(() => {
        if(isPlaying){ 
@@ -23,11 +25,11 @@ const Projects = () => {
     },[isPlaying, currentIndex])
 
     useEffect(() => {
-        let screenSize = window.screen.width
-        if(screenSize < 450) {
+        if(windowSize < 957) {
             setIsMedia(true)
+            setWindowSize(document.documentElement.clientWidth)
         }
-    },[window.screen.width])
+    },[windowSize])
 
     const handleSelect = (selectedIndex, project) => {
         setCurrentIndex(selectedIndex)
@@ -38,58 +40,77 @@ const Projects = () => {
         <Aux>
             <section className={classes.Projects} >
             
-            <Button 
-                variant="info"
-                onClick={() => window.open('https://github.com/felipeLx', '_blank')}
-            >Much more projects can be found in my GitHub</Button>
-        
-            <hr />
-            
             <div style={{width: '100%'}} activeIndex={currentIndex} onSelect={handleSelect}>
                 <div className={classes.Stage}>
                     <div className={classes.Carousel}>
-                            <div>
-                                <div className={classes.Before}>
-                                {currentIndex-1 >= 0 && !isMedia ? 
-                                <Card style={{ width: '18rem'}}>
-                                    <Card.Img style={{height: '10rem'}} variant="top" src={projectsList[currentIndex-1].image} />
-                                    <Card.Body>
+                            
+                    {!isMedia && <div className={classes.Before}>
+                                {currentIndex-1 >= 0 ? 
+                                <Card style={{ maxWidth: '18rem'}}>
+                                    {!isMedia ?
+                                    <Card.Img style={{height: '10rem'}} variant="top" src={projectsList[currentIndex-1].image} /> :
+                                    <Card.Img onClick={() => window.open(projectsList[currentIndex-1].link, '_blank')} style={{height: '10rem', cursor: 'pointer'}} variant="top" src={projectsList[currentIndex-1].image} />
+                                    }
+                                    <Card.Body style={{height: '150px'}}>
                                     <Card.Title>{projectsList[currentIndex-1].title}</Card.Title>
                                     <Card.Text>
                                         {projectsList[currentIndex-1].description}
                                     </Card.Text>
                                     <Button variant="primary" onClick={() => window.open(projectsList[currentIndex-1].link, '_blank')}>Github/Project</Button>
                                     </Card.Body>
-                                </Card> : null}
-                            </div>
+                                </Card> : 
+                                <Card style={{ width: '18rem'}}>
+                                    <Card.Img style={{height: '10rem'}} variant="top" src='' />
+                                    <Card.Body>
+                                    <Card.Title></Card.Title>
+                                    <Card.Text>
+                                    </Card.Text>
+                                    <Button variant="primary" ></Button>
+                                    </Card.Body>
+                                </Card>}
+                            </div>}
                             <div className={classes.Middle}>
                                 <Card style={{ width: '18rem'}}>
-                                    <Card.Img style={{height: '10rem'}} variant="top" src={projectsList[currentIndex].image} />
-                                    <Card.Body>
+                                {!isMedia ? 
+                                    <Card.Img style={{height: '10rem'}} variant="top" src={projectsList[currentIndex].image} /> :
+                                    <Card.Img onClick={() => window.open(projectsList[currentIndex].link, '_blank')} style={{height: '10rem', cursor: 'pointer'}} variant="top" src={projectsList[currentIndex].image} />
+                                    }
+                                    {!isMedia && <Card.Body style={{height: '150px'}}>
                                     <Card.Title>{projectsList[currentIndex].title}</Card.Title>
-                                    <Card.Text>
+                                    {!isMedia && <Card.Text>
                                         {projectsList[currentIndex].description}
-                                    </Card.Text>
+                                    </Card.Text>}
                                     <Button variant="primary" onClick={() => window.open(projectsList[currentIndex].link, '_blank')}>Github/Project</Button>
-                                    </Card.Body>
+                                    </Card.Body>}
                                 </Card>
                                 
                             </div>
-                            <div className={classes.After}>
-                                {currentIndex+1 < projectsList.length && !isMedia ? <Card style={{ width: '18rem'}}>
-                                    <Card.Img style={{height: '10rem'}} variant="top" src={projectsList[currentIndex+1].image} />
-                                    <Card.Body>
+                            {!isMedia && <div className={classes.After}>
+                                {currentIndex+1 < projectsList.length ? <Card style={{ width: '18rem'}}>
+                                {!isMedia ? 
+                                    <Card.Img style={{height: '10rem'}} variant="top" src={projectsList[currentIndex+1].image} /> :
+                                    <Card.Img  onClick={() => window.open(projectsList[currentIndex+1].link, '_blank')} style={{height: '10rem', cursor: 'pointer'}} variant="top" src={projectsList[currentIndex+1].image} />} 
+                                    {!isMedia && <Card.Body style={{height: '150px'}}>
                                     <Card.Title>{projectsList[currentIndex+1].title}</Card.Title>
                                     <Card.Text>
                                         {projectsList[currentIndex+1].description}
                                     </Card.Text>
                                     <Button variant="primary" onClick={() => window.open(projectsList[currentIndex+1].link, '_blank')}>Github/Project</Button>
+                                    </Card.Body>}
+                                </Card> : 
+                                <Card style={{ width: '18rem'}}>
+                                    <Card.Img style={{height: '10rem'}} variant="top" src='' />
+                                    <Card.Body style={{height: '150px'}}>
+                                    <Card.Title></Card.Title>
+                                    {!isMedia && <Card.Text>
+                                    </Card.Text>}
+                                    <Button variant="primary" ></Button>
                                     </Card.Body>
-                                </Card> : null}
+                                </Card>}
                                 
-                                </div>
+                                </div>}
                             </div>
-                    </div>
+                    
                 </div>
                 <div className={classes.Controls}>
                     {currentIndex -1 > 0 ?

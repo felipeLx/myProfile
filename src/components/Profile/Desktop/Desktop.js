@@ -3,27 +3,34 @@ import { Grid, Cell } from 'react-mdl';
 
 import classes from './Desktop.module.css';
 import Resume from './Resume/Resume';
-import Header from '../../Header/Header'
+import Header from '../Header/Header'
 
 const Desktop = () => {
 
     return(
     <div style={{width:'100%', textAlign: 'center'}}>
         <Header />
-        <section id='profile' className={classes.Desktop}>
-            <div className={classes.BannerText}>
-                        <h1>Full Stack Developer</h1>
-                        <div>
-                        <span className={classes.Techs}><strong>HTML/CSS - JavaScript - React - NodeJS - Java - Spring - mySQL - mongoDB</strong></span>
-                        </div>
-                        <div className={classes.Links}>
-                            <a href="https://linkedin.com/in/felipealisboa" rel="noopener noreferrer" target="_blank">
-                            <i style={{color:'black'}} className="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
+        <div className={classes.Desktop}>
             <Resume />
-        </section>
+        </div>
+        <div style={{backgroundColor: '#0f4c75'}}>
+        <Grid className={classes.Skills}>
+              <h2>Soft Skills</h2>
+                <div className={classes.Gifs}>
+                    <div>
+                <img className="" src="https://media.giphy.com/media/l46CfphUZPc9GiRbi/giphy.gif" alt="" width="50%" />
+                <h3>Team Player</h3>
+                <p>I like to be part of a winner team. Together we go far!!</p>
+                </div>
+                <div>
+                <img className="" src="https://media.giphy.com/media/8pUgs7JXe4LBK/giphy.gif" alt="" width="50%" />
+                <h3>Multitasks</h3>
+                <p>I like to help and I prepared to play in any position!!</p>
+                </div>
+                </div>
+                
+        </Grid> 
+        </div>
     </div>
 
     );
